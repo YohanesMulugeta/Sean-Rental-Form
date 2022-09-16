@@ -1,5 +1,11 @@
+import RentalForm from "./components/RentalForm";
+
 function App() {
-  return <div>App</div>;
+  return (
+    <div>
+      <RentalForm />
+    </div>
+  );
 }
 
 export default App;
