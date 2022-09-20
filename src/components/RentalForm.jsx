@@ -9,7 +9,7 @@ function RentalForm() {
     <form>
       <SelectDropOffLocation setIsSame={setIsSame} />
       <div style={{ display: "flex", width: "30rem" }}>
-        <Location label="From" width />
+        <Location label="From" width={width} />
         {isSame ? null : <Location label="To" width={width} />}
       </div>
     </form>

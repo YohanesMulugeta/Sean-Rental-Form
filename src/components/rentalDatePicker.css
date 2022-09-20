@@ -1,0 +1,142 @@
+.rdrDateRangePickerWrapper {
+  font-family: sans-serif;
+  position: relative;
+  width: fit-content;
+}
+
+.rdrMonth {
+  max-width: 27.667em;
+}
+
+.rdrMonths {
+  border-top: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.204);
+  padding: 24px 50px;
+
+  position: absolute;
+  top: 70px;
+
+  transition: all 0.4s;
+
+  background-color: #fff;
+  /* opacity: 0.6; */
+}
+
+button.rdrDay {
+  height: 50px;
+}
+
+.rdrMonthName {
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.rdrWeekDay {
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.rdrDayNumber {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.rdrMonthAndYearPickers {
+  display: none;
+}
+
+.rdrInRange {
+  background-color: #67cae4;
+  border-radius: 12px;
+
+  width: 90%;
+}
+
+.rdrStartEdge,
+.rdrEndEdge {
+  width: 90%;
+  border-radius: 12px;
+  background-color: #079;
+}
+
+/* #################### */
+/* NEXT AND PREV btns */
+
+.rdrNextPrevButton:last-of-type {
+  right: -280px;
+}
+
+.rdrDateInput {
+  display: inline-block;
+  width: 160px;
+  background-color: #f0f3f5;
+}
+
+.rdrNextPrevButton:last-of-type,
+.rdrNextPrevButton:first-of-type {
+  z-index: 999;
+  background-color: #fff;
+  border-bottom: none;
+  position: absolute;
+  /* width: 100%; */
+  top: 230px;
+  transition: all 0.3s;
+}
+
+.hiddenCalendar.rdrNextPrevButton {
+  transform: translateY(0);
+}
+
+.rdrDateDisplay {
+  background-color: #fff;
+  gap: 20px;
+}
+
+.rdrDefinedRangesWrapper {
+  display: none;
+}
+
+.hiddenCalendar {
+  transform: translateY(-120%);
+  /* makes it invisible to the eye */
+  opacity: 0;
+
+  /* makes it unaccessebile to mouse and keyboards */
+  pointer-events: none;
+
+  /* hides it from screen readers */
+  visibility: hidden;
+
+  z-index: -999;
+}
+
+.rdrMonthAndYearWrapper {
+  height: 0;
+  padding: 0;
+}
+
+.rdrDateInput {
+  box-shadow: none;
+}
+
+.rdrDateDisplayWrapper {
+  background-color: #fff;
+}
+
+@media (max-width: 823px) {
+  .rdrMonths.rdrMonthsHorizontal {
+    padding: 20px;
+    width: 650px;
+  }
+
+  .rdrNextPrevButton:last-of-type {
+    right: -175px;
+  }
+
+  .rdrNextPrevButton:first-of-type {
+    left: -5px;
+  }
+}

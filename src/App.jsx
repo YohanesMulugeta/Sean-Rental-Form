@@ -1,9 +1,11 @@
-import RentalForm from "./components/RentalForm";
+import RentalLocationForm from "./components/RentalForm";
+import RentDateRangePicker from "./components/RentDateRangePicker";
 
+import "./app.css";
 function App() {
   return (
-    <div>
-      <RentalForm />
+    <div className="rental-form">
+      <RentDateRangePicker />
     </div>
   );
 }
