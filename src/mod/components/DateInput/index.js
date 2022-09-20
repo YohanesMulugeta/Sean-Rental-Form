@@ -79,6 +79,7 @@ class DateInput extends PureComponent {
           gap: "3px",
           backgroundColor: "buttonface",
           borderRadius: "7px",
+          maxWidth: "225px",
         }}
       >
         <span
@@ -87,7 +88,7 @@ class DateInput extends PureComponent {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-around",
-            paddingLeft: "10px",
+            paddingLeft: "5px",
             height: "100%",
           }}
         >
@@ -96,7 +97,7 @@ class DateInput extends PureComponent {
             style={{ color: "#000", fontSize: "14px" }}
             readOnly={readOnly}
             disabled={disabled}
-            value={value}
+            value={value.slice(0, -6) + "/" + value.slice(-2)}
             placeholder={placeholder}
             aria-label={ariaLabel}
             onKeyDown={this.onKeyDown}

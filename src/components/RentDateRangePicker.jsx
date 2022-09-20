@@ -15,6 +15,8 @@ function RentDateRangePicker() {
     },
   ]);
 
+  const [isVertical, setIsVertical] = useState();
+
   const calendarRef = useRef();
   const endDateBtn = useRef();
   const startDateBtn = useRef();
@@ -52,8 +54,28 @@ function RentDateRangePicker() {
     });
   }
 
+  function initResize() {
+    const body = document.body;
+
+    const bodyWidthObserver = new ResizeObserver(([entry]) => {
+      const bodyWidth = entry.contentRect.width;
+      if (bodyWidth < 657 && isVertical === false) {
+        setIsVertical(true);
+        addHidden();
+      }
+      if (bodyWidth >= 657 && isVertical === true) {
+        setIsVertical(false);
+        addHidden();
+      }
+    });
+
+    bodyWidthObserver.observe(body);
+  }
+
   useLayoutEffect(() => {
     removeActiveButtonStyle();
+
+    initResize();
   }, []);
 
   useEffect(() => {
@@ -102,7 +124,7 @@ function RentDateRangePicker() {
         moveRangeOnFirstSelection={false}
         months={2}
         ranges={dateState}
-        direction="horizontal"
+        direction={isVertical ? "vertical" : "horizontal"}
         showMonthAndYearPickers={false}
         minDate={new Date()}
       />

@@ -140,3 +140,9 @@ button.rdrDay {
     left: -5px;
   }
 }
+
+@media (max-width: 670px) {
+  .rdrDateInput {
+    width: 103px;
+  }
+}
