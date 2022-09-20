@@ -145,4 +145,17 @@ button.rdrDay {
   .rdrDateInput {
     width: 103px;
   }
+
+  div.rdrMonths.rdrMonthsVertical {
+    align-items: center;
+    padding: 20px;
+    width: 350px;
+  }
+
+  div.rdrDays {
+    width: 100%;
+  }
+  .rdrNextPrevButton:last-of-type {
+    right: 20px;
+  }
 }

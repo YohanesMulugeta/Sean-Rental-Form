@@ -59,13 +59,8 @@ function RentDateRangePicker() {
 
     const bodyWidthObserver = new ResizeObserver(([entry]) => {
       const bodyWidth = entry.contentRect.width;
-      if (bodyWidth < 657 && isVertical === false) {
+      if (bodyWidth <= 670) {
         setIsVertical(true);
-        addHidden();
-      }
-      if (bodyWidth >= 657 && isVertical === true) {
-        setIsVertical(false);
-        addHidden();
       }
     });
 
