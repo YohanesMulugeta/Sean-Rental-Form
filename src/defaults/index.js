@@ -28,41 +28,33 @@ export function createLink(loc, date1, date2) {
     olat: "",
     locationLink: "",
   };
+  let link = "";
   switch (loc) {
     case MAUIAIR:
-      locationInfo.locationLink =
-        "Kahului%2C%20HI%2C%20United%20States%20of%20America%20%28OGG%29";
-      locationInfo.olon = "-156.437168&";
-      locationInfo.olat = "20.894489";
-
+      link = `https://www.expedia.com/carsearch?date1=${date1.month}%2F${date1.day}%2F${date1.year}&date2=${date2.month}%2F${date2.day}%2F${date2.year}&dlat=&dlon=&dpln=4671311&drid1=&loc2=&locn=Kahului%2C%20HI%2C%20United%20States%20of%20America%20%28OGG%29&olat=20.894489&olon=-156.437168&pickupCode=OGG&rfrr=Homepage&time1=${date1.time}&time2=${date2.time}`;
       break;
 
     case LAHAINA:
-      locationInfo.locationLink =
-        "Lahaina%2C%20Hawaii%2C%20United%20States%20of%20America";
+      link = `https://www.expedia.com/carsearch?locn=Lahaina&loc2=&date1=${date1.month}%2F${date1.day}%2F${date1.year}&date2=${date2.month}%2F${date2.day}%2F${date2.year}&d1=${date1.year}-${date1.month}-${date1.day}&d2=${date2.year}-${date2.month}-${date2.day}&aarpcr=off&vend=&pickupIATACode=OGG&dpln=8499&returnIATACode=&drid1=&time1=${date1.time}&time2=${date2.time}&olat=&olon=&dlat=&dlon=&dagv=1&subm=1&fdrp=0&ttyp=2&acop=2&rdus=10&rdct=1&styp=4&rfrr=Homepage`;
 
       break;
     case KAANAPALI:
-      locationInfo.locationLink =
-        "Kaanapali%2C%20Hawaii%2C%20United%20States%20of%20America";
+      link = `https://www.expedia.com/carsearch?locn=Kaanapali&loc2=&date1=${date1.month}%2F${date1.day}%2F${date1.year}&date2=${date2.month}%2F${date2.day}%2F${date2.year}&d1=${date1.year}-${date1.month}-${date1.day}&d2=${date2.year}-${date2.month}-${date2.day}&aarpcr=off&vend=&pickupIATACode=OGG&dpln=800065&returnIATACode=&drid1=&time1=${date1.time}&time2=${date2.time}&olat=&olon=&dlat=&dlon=&dagv=1&subm=1&fdrp=0&ttyp=2&acop=2&rdus=10&rdct=1&styp=4&rfrr=Homepage`;
 
       break;
 
     case KAPALUA:
-      locationInfo.locationLink =
-        "Kapalua%2C%20Hawaii%2C%20United%20States%20of%20America";
+      link = `https://www.expedia.com/carsearch?locn=Kapalua+%28JHM+-+West+Maui%29&loc2=&date1=${date1.month}%2F${date1.day}%2F${date1.year}&date2=${date2.month}%2F${date2.day}%2F${date2.year}&d1=${date1.year}-${date1.month}-${date1.day}&d2=${date2.year}-${date2.month}-${date2.day}&aarpcr=off&vend=&pickupIATACode=JHM&dpln=6024505&returnIATACode=&drid1=&time1=${date1.time}&time2=${date2.time}&olat=&olon=&dlat=&dlon=&dagv=1&subm=1&fdrp=0&ttyp=2&acop=2&rdus=10&rdct=1&styp=4&rfrr=Homepage`;
 
       break;
 
     case KIHEI:
-      locationInfo.locationLink =
-        "Kihei%2C%20Hawaii%2C%20United%20States%20of%20America";
+      link = `https://www.expedia.com/carsearch?locn=Kihei&loc2=&date1=${date1.month}%2F${date1.day}%2F${date1.year}&date2=${date2.month}%2F${date2.day}%2F${date2.year}&d1=${date1.year}-${date1.month}-${date1.day}&d2=${date2.year}-${date2.month}-${date2.day}&aarpcr=off&vend=&pickupIATACode=OGG&dpln=9304&returnIATACode=&drid1=&time1=${date1.time}&time2=${date2.time}&olat=&olon=&dlat=&dlon=&dagv=1&subm=1&fdrp=0&ttyp=2&acop=2&rdus=10&rdct=1&styp=4&rfrr=Homepage`;
 
       break;
 
     case WAILEA:
-      locationInfo.locationLink =
-        "Wailea%2C%20Hawaii%2C%20United%20States%20of%20America";
+      link = `https://www.expedia.com/carsearch?locn=Wailea&loc2=&date1=${date1.month}%2F${date1.day}%2F${date1.year}&date2=${date2.month}%2F${date2.day}%2F${date2.year}&d1=${date1.year}-${date1.month}-${date1.day}&d2=${date2.year}-${date2.month}-${date2.day}&aarpcr=off&vend=&pickupIATACode=OGG&dpln=7739&returnIATACode=&drid1=&time1=${date1.time}&time2=${date2.time}&olat=&olon=&dlat=&dlon=&dagv=1&subm=1&fdrp=0&ttyp=2&acop=2&rdus=10&rdct=1&styp=4&rfrr=Homepage`;
 
       break;
 
@@ -70,7 +62,6 @@ export function createLink(loc, date1, date2) {
       locationInfo.locationLink =
         '"Kahului%2C%20HI%2C%20United%20States%20of%20America%20%28OGG%29"';
   }
-  const template = `https://www.expedia.com/carsearch?date1=${date1.month}%2F${date1.day}%2F${date1.year}&date2=${date2.month}%2F${date2.day}%2F${date2.year}&dlat=&dlon=&dpln=4671311&drid1=&loc2=&locn=${locationInfo.locationLink}%29&olat=${locationInfo.olat}&olon=${locationInfo.olon}pickupCode=OGG&rfrr=Homepage&time1=1030AM&time2=1030AM`;
 
-  return template;
+  return link;
 }
