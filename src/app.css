@@ -21,3 +21,66 @@
 .column {
   flex-direction: column;
 }
+
+.rdrMonthAndYearWrapper {
+  height: 0;
+}
+
+@media (max-width: 970px) {
+  .rdrMonths {
+    left: -60px;
+    padding: 10px 15px;
+    right: auto;
+    /* width: 165%; */
+    justify-content: space-between;
+  }
+
+  .rental-form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .form-fields-container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .location-fields-container {
+    width: 100%;
+    /* justify-content: space-between; */
+  }
+
+  .date-search-container {
+    justify-content: space-between;
+  }
+
+  .rdrDateInput {
+    width: auto;
+  }
+
+  .btn {
+    width: 150px;
+  }
+
+  .rdrNextPrevButton:last-of-type {
+    right: 0;
+  }
+}
+
+@media (max-width: 725px) {
+  div.rdrMonths.rdrMonthsVertical {
+    top: -70px;
+    left: 10%;
+
+    align-items: center;
+    padding: 24px 20px;
+    /* width: 350px; */
+    width: 450px;
+  }
+}
+
+@media (max-width: 540px) {
+  div.rdrMonths.rdrMonthsVertical {
+    width: 350px;
+  }
+}

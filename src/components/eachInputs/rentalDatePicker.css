@@ -19,6 +19,8 @@
   transition: all 0.4s;
 
   background-color: #fff;
+
+  right: 0;
   /* opacity: 0.6; */
 }
 
@@ -134,12 +136,7 @@ button.rdrDay {
   background-color: #fff;
 }
 
-@media (max-width: 823px) {
-  /* .rdrMonths.rdrMonthsHorizontal {
-    padding: 20px;
-    width: 650px;
-  } */
-
+/* @media (max-width: 823px) {
   .rdrNextPrevButton:last-of-type {
     right: 0;
   }
@@ -147,23 +144,4 @@ button.rdrDay {
   .rdrNextPrevButton:first-of-type {
     left: 0;
   }
-}
-
-@media (max-width: 670px) {
-  .rdrDateInput {
-    width: 103px;
-  }
-
-  div.rdrMonths.rdrMonthsVertical {
-    align-items: center;
-    padding: 20px;
-    width: 350px;
-  }
-
-  div.rdrDays {
-    width: 100%;
-  }
-  .rdrNextPrevButton:last-of-type {
-    right: 0;
-  }
-}
+} */

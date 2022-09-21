@@ -60,12 +60,12 @@ function RentDateRangePicker() {
 
     const bodyWidthObserver = new ResizeObserver(([entry]) => {
       const bodyWidth = entry.contentRect.width;
-      if (!isVerticalRef.current && bodyWidth <= 670) {
+      if (!isVerticalRef.current && bodyWidth <= 725) {
         isVerticalRef.current = true;
         addHidden();
         setIsVertical(isVerticalRef.current);
       }
-      if (isVerticalRef.current && bodyWidth > 670) {
+      if (isVerticalRef.current && bodyWidth > 725) {
         console.log(bodyWidth);
         isVerticalRef.current = false;
         addHidden();
