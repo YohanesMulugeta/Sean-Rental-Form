@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { format, parse, isValid, isEqual } from "date-fns";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 
-import TimeDropDown from "../../../components/TimeDropDown";
+import TimeDropDown from "../../../components/eachInputs/TimeDropDown";
 
 class DateInput extends PureComponent {
   constructor(props, context) {

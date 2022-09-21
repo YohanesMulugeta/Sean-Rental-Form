@@ -1,6 +1,6 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { addDays } from "date-fns";
-import { DateRangePicker } from "../mod";
+import { DateRangePicker } from "../../mod";
 
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file

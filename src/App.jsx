@@ -1,11 +1,10 @@
-import RentalLocationForm from "./components/RentalForm";
-import RentDateRangePicker from "./components/RentDateRangePicker";
+import LocationInput from "./components/eachInputs/LocationInput";
 
 import "./app.css";
 function App() {
   return (
     <div className="rental-form">
-      <RentDateRangePicker />
+      <LocationInput />
     </div>
   );
 }

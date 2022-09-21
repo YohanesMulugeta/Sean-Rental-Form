@@ -5,6 +5,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import FormControl from "@mui/material/FormControl";
 
 import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import "./loction.css";
 
 export default function Location({ label, width }) {
   return (
