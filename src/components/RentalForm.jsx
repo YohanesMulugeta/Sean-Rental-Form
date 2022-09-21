@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { addDays } from "date-fns";
 import { pink } from "@mui/material/colors";
@@ -29,20 +29,29 @@ function RentalForm() {
       startDate: new Date(),
       endDate: addDays(new Date(), 1),
       key: "selection",
+      pickTime: "1200AM",
+      dropTime: "1200AM",
     },
   ]);
+
+  const times = useRef();
 
   const [isSame, setIsSame] = useState("Same");
   const width = isSame === "Same" ? "100%" : "50%";
 
   function handleClick() {
-    console.log(dateState[0].startDate.getFullYear());
-    // window.open(
-    //   "https://www.expedia.com/carsearch?locn=Kahului+%28OGG+-+Kahului%29&loc2=&date1=10%2F14%2F2022&date2=10%2F21%2F2022&d1=2022-10-14&d2=2022-10-21&aarpcr=off&vend=&pickupIATACode=OGG&dpln=4671311&returnIATACode=&drid1=&time1=1030AM&time2=1030AM&olat=&olon=&dlat=&dlon=&dagv=1&subm=1&fdrp=0&ttyp=2&acop=2&rdus=10&rdct=1&styp=4&rfrr=Homepage",
-    //   "_blank",
-    //   "noopener,noreferrer"
-    // );
+    const link = createLink(MAUIAIR, {
+      ...dateState[0],
+      pickTime: times.current[0].dataset.time,
+      dropTime: times.current[1].dataset.time,
+    });
+
+    window.open(link, "_blank");
   }
+
+  useEffect(() => {
+    times.current = document.querySelectorAll(".select-time");
+  }, []);
 
   return (
     <form>

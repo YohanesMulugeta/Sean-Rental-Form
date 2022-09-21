@@ -33,7 +33,7 @@ function dateFormater(date) {
 
   return {
     date1: { ...format(date.startDate), time: date.pickTime },
-    date2: { ...format(date.startDate), time: date.dropTime },
+    date2: { ...format(date.endDate), time: date.dropTime },
   };
 }
 
