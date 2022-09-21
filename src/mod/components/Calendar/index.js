@@ -490,10 +490,11 @@ class Calendar extends PureComponent {
         }}
       >
         {showDateDisplay && this.renderDateDisplay()}
-        {monthAndYearRenderer(focusedDate, this.changeShownDate, this.props)}
+        {/* {monthAndYearRenderer(focusedDate, this.changeShownDate, this.props)} */}
         {scroll.enabled ? (
           <div>
             {isVertical && this.renderWeekdays(this.dateOptions)}
+
             <div
               ref={this.props.calendarRef}
               className={
@@ -525,33 +526,42 @@ class Calendar extends PureComponent {
                 itemRenderer={(index, key) => {
                   const monthStep = addMonths(minDate, index);
                   return (
-                    <Month
-                      {...this.props}
-                      onPreviewChange={onPreviewChange || this.updatePreview}
-                      preview={preview || this.state.preview}
-                      ranges={ranges}
-                      key={key}
-                      drag={this.state.drag}
-                      dateOptions={this.dateOptions}
-                      disabledDates={disabledDates}
-                      disabledDay={disabledDay}
-                      month={monthStep}
-                      onDragSelectionStart={this.onDragSelectionStart}
-                      onDragSelectionEnd={this.onDragSelectionEnd}
-                      onDragSelectionMove={this.onDragSelectionMove}
-                      onMouseLeave={() => onPreviewChange && onPreviewChange()}
-                      styles={this.styles}
-                      style={
-                        isVertical
-                          ? { height: this.estimateMonthSize(index) }
-                          : {
-                              height: scrollArea.monthHeight,
-                              width: this.estimateMonthSize(index),
-                            }
-                      }
-                      showMonthName
-                      showWeekDays={!isVertical}
-                    />
+                    <div className="monthsButtonWrapper">
+                      {monthAndYearRenderer(
+                        focusedDate,
+                        this.changeShownDate,
+                        this.props
+                      )}
+                      <Month
+                        {...this.props}
+                        onPreviewChange={onPreviewChange || this.updatePreview}
+                        preview={preview || this.state.preview}
+                        ranges={ranges}
+                        key={key}
+                        drag={this.state.drag}
+                        dateOptions={this.dateOptions}
+                        disabledDates={disabledDates}
+                        disabledDay={disabledDay}
+                        month={monthStep}
+                        onDragSelectionStart={this.onDragSelectionStart}
+                        onDragSelectionEnd={this.onDragSelectionEnd}
+                        onDragSelectionMove={this.onDragSelectionMove}
+                        onMouseLeave={() =>
+                          onPreviewChange && onPreviewChange()
+                        }
+                        styles={this.styles}
+                        style={
+                          isVertical
+                            ? { height: this.estimateMonthSize(index) }
+                            : {
+                                height: scrollArea.monthHeight,
+                                width: this.estimateMonthSize(index),
+                              }
+                        }
+                        showMonthName
+                        showWeekDays={!isVertical}
+                      />
+                    </div>
                   );
                 }}
               />
@@ -578,25 +588,32 @@ class Calendar extends PureComponent {
                 );
               }
               return (
-                <Month
-                  {...this.props}
-                  onPreviewChange={onPreviewChange || this.updatePreview}
-                  preview={preview || this.state.preview}
-                  ranges={ranges}
-                  key={i}
-                  drag={this.state.drag}
-                  dateOptions={this.dateOptions}
-                  disabledDates={disabledDates}
-                  disabledDay={disabledDay}
-                  month={monthStep}
-                  onDragSelectionStart={this.onDragSelectionStart}
-                  onDragSelectionEnd={this.onDragSelectionEnd}
-                  onDragSelectionMove={this.onDragSelectionMove}
-                  onMouseLeave={() => onPreviewChange && onPreviewChange()}
-                  styles={this.styles}
-                  showWeekDays={!isVertical || i === 0}
-                  showMonthName={!isVertical || i > 0}
-                />
+                <div className="monthsButtonWrapper">
+                  {monthAndYearRenderer(
+                    focusedDate,
+                    this.changeShownDate,
+                    this.props
+                  )}
+                  <Month
+                    {...this.props}
+                    onPreviewChange={onPreviewChange || this.updatePreview}
+                    preview={preview || this.state.preview}
+                    ranges={ranges}
+                    key={i}
+                    drag={this.state.drag}
+                    dateOptions={this.dateOptions}
+                    disabledDates={disabledDates}
+                    disabledDay={disabledDay}
+                    month={monthStep}
+                    onDragSelectionStart={this.onDragSelectionStart}
+                    onDragSelectionEnd={this.onDragSelectionEnd}
+                    onDragSelectionMove={this.onDragSelectionMove}
+                    onMouseLeave={() => onPreviewChange && onPreviewChange()}
+                    styles={this.styles}
+                    showWeekDays={!isVertical || i === 0}
+                    showMonthName={!isVertical || i > 0}
+                  />
+                </div>
               );
             })}
           </div>

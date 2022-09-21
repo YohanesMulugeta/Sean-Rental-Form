@@ -66,7 +66,11 @@ button.rdrDay {
 /* NEXT AND PREV btns */
 
 .rdrNextPrevButton:last-of-type {
-  right: -280px;
+  right: 0;
+}
+
+.rdrNextPrevButton:first-of-type {
+  left: 0;
 }
 
 .rdrDateInput {
@@ -82,7 +86,7 @@ button.rdrDay {
   border-bottom: none;
   position: absolute;
   /* width: 100%; */
-  top: 230px;
+  top: 50%;
   transition: all 0.3s;
 }
 
@@ -94,10 +98,12 @@ button.rdrDay {
   background-color: #fff;
   gap: 5px;
   margin: 0;
+  max-width: 455px;
 }
 
 .rdrDefinedRangesWrapper {
   display: none;
+  /* justify-content: space-between; */
 }
 
 .hiddenCalendar {
@@ -115,8 +121,9 @@ button.rdrDay {
 }
 
 .rdrMonthAndYearWrapper {
-  height: 0;
-  padding: 0;
+  /* height: 0;
+  padding: 0; */
+  justify-content: space-between;
 }
 
 .rdrDateInput {
@@ -128,17 +135,17 @@ button.rdrDay {
 }
 
 @media (max-width: 823px) {
-  .rdrMonths.rdrMonthsHorizontal {
+  /* .rdrMonths.rdrMonthsHorizontal {
     padding: 20px;
     width: 650px;
-  }
+  } */
 
   .rdrNextPrevButton:last-of-type {
-    right: -175px;
+    right: 0;
   }
 
   .rdrNextPrevButton:first-of-type {
-    left: -5px;
+    left: 0;
   }
 }
 
@@ -157,6 +164,6 @@ button.rdrDay {
     width: 100%;
   }
   .rdrNextPrevButton:last-of-type {
-    right: 20px;
+    right: 0;
   }
 }
