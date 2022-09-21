@@ -5,12 +5,7 @@ import "./sameDiff.css";
 
 const selections = ["Same", "Different"];
 
-function SameDiffDropOff() {
-  const [selectedDrop, setSelectedDrop] = useState({
-    renderedValue: "Same",
-    value: "Same",
-  });
-
+function SameDiffDropOff({ setIsSame, isSame }) {
   const selectionRef = useRef();
 
   useEffect(() => {
@@ -25,31 +20,18 @@ function SameDiffDropOff() {
     return () => window.removeEventListener("click", handleOutsideClick);
   }, []);
 
-  function renderStr(val) {
-    return `${val} drop-off`;
-  }
-
   function renderList() {
     return selections.map((selection) => {
-      // eslint-disable-next-line testing-library/render-result-naming-convention
-      const txt = renderStr(selection);
       return (
         <li
           key={selection}
-          data-rendered={selection}
-          data-value={selection}
           onClick={(e) => {
-            setSelectedDrop({
-              renderedValue: e.target.dataset.rendered,
-              value: e.target.dataset.value,
-            });
+            setIsSame(selection);
             selectionRef.current.classList.add("hidden-container");
           }}
-          className={`selection ${
-            selection === selectedDrop.value ? "selected" : ""
-          }`}
+          className={`selection ${selection === isSame ? "selected" : ""}`}
         >
-          {txt}
+          {selection} drop-off
         </li>
       );
     });
@@ -61,11 +43,14 @@ function SameDiffDropOff() {
   }
 
   return (
-    <div className="dropDown-contaienr relative">
+    <div
+      className="dropDown-contaienr relative"
+      onClick={(e) => {
+        e.preventDefault();
+      }}
+    >
       <div className="button-container" onClick={handleClick}>
-        <button className="select-dropOff">
-          {renderStr(selectedDrop.renderedValue)}
-        </button>
+        <button className="select-dropOff">{isSame} drop-off</button>
         <ExpandMoreIcon fontSize="small" />
       </div>
       <div

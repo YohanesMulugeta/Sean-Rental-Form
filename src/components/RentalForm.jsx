@@ -1,16 +1,27 @@
 import { useState } from "react";
-import SelectDropOffLocation from "./eachInputs/DropOff";
-import Location from "./eachInputs/Location";
+
+import SameDiff from "./eachInputs/SameDiffDropOff";
+import Location from "./eachInputs/LocationInput";
+import RentDateRangePicker from "./eachInputs/RentDateRangePicker";
+
+import "./rentalForm.css";
 
 function RentalForm() {
-  const [isSame, setIsSame] = useState(true);
-  const width = isSame ? "100%" : "auto";
+  const [isSame, setIsSame] = useState("Same");
+  const width = isSame === "Same" ? "100%" : "auto";
   return (
     <form>
-      <SelectDropOffLocation setIsSame={setIsSame} />
-      <div style={{ display: "flex", width: "30rem" }}>
-        <Location label="From" width={width} />
-        {isSame ? null : <Location label="To" width={width} />}
+      <div className="flex inner-form-container column">
+        <SameDiff setIsSame={setIsSame} isSame={isSame} />
+        <div>
+          <div
+            style={{ display: "flex", width: "28rem" }}
+            className="form-fields-container"
+          >
+            <Location label="From?" width={width} />
+            {isSame === "Same" ? null : <Location label="To?" width={width} />}
+          </div>
+        </div>
       </div>
     </form>
   );

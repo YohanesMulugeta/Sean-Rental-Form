@@ -1,10 +1,11 @@
-import LocationInput from "./components/eachInputs/LocationInput";
+import RentalForm from "./components/RentalForm";
 
 import "./app.css";
+
 function App() {
   return (
     <div className="rental-form">
-      <LocationInput />
+      <RentalForm />
     </div>
   );
 }
