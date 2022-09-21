@@ -338,7 +338,7 @@ class Calendar extends PureComponent {
             return null;
           return (
             <div
-              className={styles.dateDisplay}
+              className={styles.dateDisplay + " date-input"}
               key={i}
               style={{ color: range.color || defaultColor }}
             >

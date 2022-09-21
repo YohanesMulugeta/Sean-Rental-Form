@@ -2,6 +2,10 @@
   gap: 10px;
 }
 
+.location-fields-container {
+  width: 28em;
+}
+
 .location-fields-container,
 .form-fields-container {
   gap: 5px;
@@ -13,4 +17,58 @@
   justify-content: center;
   width: 50px;
   height: 50px;
+  background: linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
+  border-radius: 7px;
+}
+
+.btn > svg.MuiSvgIcon-root {
+  fill: #fff;
+}
+
+.date-search-container {
+  gap: 5px;
+}
+
+@media (max-width: 970px) {
+  /* .inner-form-container {
+    flex-direction: column;
+  } */
+  .form-fields-container {
+    width: 700px;
+    flex-direction: column;
+  }
+  .location-fields-container {
+    width: 100%;
+    /* justify-content: space-between; */
+  }
+
+  .date-search-container {
+    justify-content: space-between;
+  }
+
+  .btn {
+    width: 200px;
+  }
+
+  /* div.rdrMonths.rdrMonthsVertical {
+    align-items: center;
+    padding: 20px;
+    width: 350px;
+  } */
+
+  /* div.rdrDays {
+    width: 100%;
+  } */
+  /* .rdrDateRangePickerWrapper,
+  div.rdrCalendarWrapper.rdrDateRangeWrapper {
+    width: 100%;
+  } */
+
+  /* .date-input {
+    width: 50%;
+  } */
+
+  .rdrNextPrevButton:last-of-type {
+    right: 0;
+  }
 }

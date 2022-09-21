@@ -76,11 +76,12 @@ class DateInput extends PureComponent {
         style={{
           display: "flex",
           alignItems: "center",
+
           gap: "3px",
           backgroundColor: "buttonface",
           borderRadius: "7px",
-          maxWidth: "225px",
         }}
+        className="date-input"
       >
         <span
           className={classnames("rdrDateInput", className)}
