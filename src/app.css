@@ -80,7 +80,17 @@
 }
 
 @media (max-width: 540px) {
+  .date-search-container {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
   div.rdrMonths.rdrMonthsVertical {
     width: 350px;
+
+    left: -3%;
   }
 }
