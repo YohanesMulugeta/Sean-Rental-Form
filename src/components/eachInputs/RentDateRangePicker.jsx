@@ -1,20 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { addDays } from "date-fns";
 import { DateRangePicker } from "../../mod";
 
 import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import "./rentalDatePicker.css";
 
-function RentDateRangePicker() {
-  const [dateState, setDateState] = useState([
-    {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 1),
-      key: "selection",
-    },
-  ]);
-
+function RentDateRangePicker({ dateState, setDateState }) {
   const [, setIsVertical] = useState();
 
   const calendarRef = useRef();
