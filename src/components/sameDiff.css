@@ -1,0 +1,66 @@
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+}
+
+.selected {
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+.button-container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.select-dropOff,
+.button-container {
+  border-style: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.dropDown-selections-container {
+  width: fit-content;
+
+  transition: all 0.3s;
+}
+
+.hidden-container {
+  visibility: hidden;
+
+  pointer-events: none;
+
+  opacity: 0;
+
+  z-index: -999;
+}
+
+.dropDown-selections-list {
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0 0px 20px rgb(25 32 36 / 9%);
+  width: 260px;
+}
+
+.selection {
+  cursor: pointer;
+  color: #192024;
+  font-size: 14px;
+  list-style: none;
+  height: 40px;
+  width: 100%;
+  padding: 10px 16px;
+  letter-spacing: 0.3px;
+}
+
+.selection:hover,
+.selected {
+  background-color: rgb(230, 235, 239);
+}
