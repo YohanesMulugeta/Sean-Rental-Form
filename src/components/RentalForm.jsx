@@ -25,6 +25,7 @@ function RentalForm() {
 
   const [isSame, setIsSame] = useState("Same");
   const width = isSame === "Same" ? "100%" : "50%";
+
   return (
     <form>
       <div className="flex inner-form-container column">
