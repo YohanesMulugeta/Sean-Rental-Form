@@ -20,8 +20,10 @@ function RentalForm() {
             style={{ display: "flex" }}
             className="location-fields-container"
           >
-            <Location label="From?" width={width} />
-            {isSame === "Same" ? null : <Location label="To?" width={width} />}
+            <Location label="Pick-up location" width={width} />
+            {isSame === "Same" ? null : (
+              <Location label="Drop-off location" width={width} />
+            )}
           </div>
           <div className="date-search-container flex">
             <RentDateRangePicker />

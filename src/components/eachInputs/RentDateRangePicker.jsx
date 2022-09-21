@@ -45,11 +45,14 @@ function RentDateRangePicker() {
   }
 
   function addHidden() {
-    startDateBtn.current.scrollIntoView({ behaviour: "smooth" });
     setTimeout(() => {
       calendarRef.current.classList.add("hiddenCalendar");
       removeActiveButtonStyle();
     });
+
+    setTimeout(() => {
+      startDateBtn.current.scrollIntoView({ behaviour: "smooth" });
+    }, 700);
 
     Object.values(nextPrevMonthBtns.current).forEach((btn) => {
       btn.classList.add("hiddenCalendar");
@@ -79,11 +82,6 @@ function RentDateRangePicker() {
   useLayoutEffect(() => {
     removeActiveButtonStyle();
 
-    initResize();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
     startDateBtn.current = document.querySelector(".start-date");
     endDateBtn.current = document.querySelector(".end-date");
 
@@ -92,7 +90,12 @@ function RentDateRangePicker() {
 
     startDateBtn.current.addEventListener("click", removeHidden);
     endDateBtn.current.addEventListener("click", removeHidden);
+    initResize();
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
     function handleOutsideClick(e) {
       if (
         !e.target.closest(".rdrDateRangePickerWrapper") ||
