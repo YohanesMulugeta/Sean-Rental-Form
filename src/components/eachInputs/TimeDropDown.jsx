@@ -69,7 +69,8 @@ function TimeDropDown({ id }) {
     <div className={`${id} time-selection-container relative`}>
       <div>
         <button
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
             setIsSelectionVisible(true);
           }}
           className="select-time"

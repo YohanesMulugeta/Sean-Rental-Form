@@ -15,7 +15,7 @@ function RentDateRangePicker() {
     },
   ]);
 
-  const [isVertical, setIsVertical] = useState();
+  const [, setIsVertical] = useState();
 
   const calendarRef = useRef();
   const endDateBtn = useRef();

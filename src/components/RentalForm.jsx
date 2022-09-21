@@ -1,8 +1,10 @@
 import { useState } from "react";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 import SameDiff from "./eachInputs/SameDiffDropOff";
 import Location from "./eachInputs/LocationInput";
 import RentDateRangePicker from "./eachInputs/RentDateRangePicker";
+import { pink } from "@mui/material/colors";
 
 import "./rentalForm.css";
 
@@ -13,13 +15,17 @@ function RentalForm() {
     <form>
       <div className="flex inner-form-container column">
         <SameDiff setIsSame={setIsSame} isSame={isSame} />
-        <div>
+        <div className="form-fields-container flex">
           <div
             style={{ display: "flex", width: "28rem" }}
-            className="form-fields-container"
+            className="location-fields-container"
           >
             <Location label="From?" width={width} />
             {isSame === "Same" ? null : <Location label="To?" width={width} />}
+          </div>
+          <RentDateRangePicker />
+          <div className="btn flex" role="button">
+            <SearchOutlinedIcon fontSize="large" sx={{ color: pink[200] }} />
           </div>
         </div>
       </div>

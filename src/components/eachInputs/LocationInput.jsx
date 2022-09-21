@@ -5,7 +5,13 @@ export default function Location({ label, width }) {
   const [value, setValue] = useState();
   return (
     <div className="input-container" style={{ width: width }}>
-      <input className="location-input-field" type="text" placeholder={label} />
+      <input
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        className="location-input-field"
+        type="text"
+        placeholder={label}
+      />
     </div>
   );
 }

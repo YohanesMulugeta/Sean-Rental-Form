@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 import "./sameDiff.css";
