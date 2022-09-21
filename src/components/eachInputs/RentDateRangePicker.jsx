@@ -45,6 +45,7 @@ function RentDateRangePicker() {
   }
 
   function addHidden() {
+    startDateBtn.current.scrollIntoView({ behaviour: "smooth" });
     setTimeout(() => {
       calendarRef.current.classList.add("hiddenCalendar");
       removeActiveButtonStyle();
@@ -66,7 +67,6 @@ function RentDateRangePicker() {
         setIsVertical(isVerticalRef.current);
       }
       if (isVerticalRef.current && bodyWidth > 725) {
-        console.log(bodyWidth);
         isVerticalRef.current = false;
         addHidden();
         setIsVertical(isVerticalRef.current);
