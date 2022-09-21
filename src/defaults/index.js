@@ -22,7 +22,23 @@ export const KAPALUA = "kapalua";
 export const KIHEI = "kihei";
 export const WAILEA = "wailea";
 
-export function createLink(loc, date1, date2) {
+function dateFormater(date) {
+  function format(da) {
+    return {
+      month: da.getMonth() + 1,
+      day: da.getDate(),
+      year: da.getFullYear(),
+    };
+  }
+
+  return {
+    date1: { ...format(date.startDate), time: date.pickTime },
+    date2: { ...format(date.startDate), time: date.dropTime },
+  };
+}
+
+export function createLink(loc, dateState) {
+  const { date1, date2 } = dateFormater(dateState);
   const locationInfo = {
     olon: "",
     olat: "",
