@@ -60,6 +60,7 @@
 
   .btn {
     width: 150px;
+    gap: 15px;
   }
 
   .rdrNextPrevButton:last-of-type {

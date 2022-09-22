@@ -3,7 +3,7 @@
 }
 
 .location-fields-container {
-  width: 28em;
+  width: 24em;
 }
 
 .location-fields-container,
@@ -15,7 +15,9 @@
   cursor: pointer;
   align-items: center;
   justify-content: center;
-  width: 50px;
+  padding: 0 10px;
+  gap: 10px;
+  width: fit-content;
   height: 50px;
   background: linear-gradient(135deg, #ff690f 0%, #e8381b 100%);
   border-radius: 7px;

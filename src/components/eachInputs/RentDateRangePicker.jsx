@@ -37,7 +37,7 @@ function RentDateRangePicker({ dateState, setDateState }) {
 
   function addHidden() {
     setTimeout(() => {
-      calendarRef.current.classList.add("hiddenCalendar");
+      calendarRef.current?.classList.add("hiddenCalendar");
       removeActiveButtonStyle();
     });
 
@@ -55,6 +55,7 @@ function RentDateRangePicker({ dateState, setDateState }) {
 
     const bodyWidthObserver = new ResizeObserver(([entry]) => {
       const bodyWidth = entry.contentRect.width;
+
       if (!isVerticalRef.current && bodyWidth <= 725) {
         isVerticalRef.current = true;
         addHidden();

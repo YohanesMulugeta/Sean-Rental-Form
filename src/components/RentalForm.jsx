@@ -26,8 +26,8 @@ Thu Nov 10 2022 00:00:00 GMT+0300 (East Africa Time)
 function RentalForm() {
   const [dateState, setDateState] = useState([
     {
-      startDate: new Date(),
-      endDate: addDays(new Date(), 1),
+      startDate: addDays(new Date(), 30),
+      endDate: addDays(new Date(), 31),
       key: "selection",
       pickTime: "1200AM",
       dropTime: "1200AM",
@@ -62,9 +62,17 @@ function RentalForm() {
             style={{ display: "flex" }}
             className="location-fields-container"
           >
-            <Location label="Pick-up location" width={width} />
+            <Location
+              handleClick={handleClick}
+              label="Pick-up location"
+              width={width}
+            />
             {isSame === "Same" ? null : (
-              <Location label="Drop-off location" width={width} />
+              <Location
+                handleClick={handleClick}
+                label="Drop-off location"
+                width={width}
+              />
             )}
           </div>
           <div className="date-search-container flex">
@@ -72,7 +80,13 @@ function RentalForm() {
               dateState={dateState}
               setDateState={setDateState}
             />
-            <div className="btn flex" role="button" onClick={handleClick}>
+            <div
+              className="btn flex"
+              role="button"
+              onClick={handleClick}
+              style={{ fontWeight: "bold" }}
+            >
+              Search{" "}
               <SearchOutlinedIcon fontSize="large" sx={{ color: pink[200] }} />
             </div>
           </div>
