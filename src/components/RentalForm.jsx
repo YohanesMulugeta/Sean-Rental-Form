@@ -84,7 +84,12 @@ function RentalForm() {
               className="btn flex"
               role="button"
               onClick={handleClick}
-              style={{ fontWeight: "bold" }}
+              style={{
+                fontWeight: "bold",
+                color: "#fff",
+                paddingLeft: "15px",
+                letterSpacing: "0.8px",
+              }}
             >
               Search{" "}
               <SearchOutlinedIcon fontSize="large" sx={{ color: pink[200] }} />
