@@ -15,12 +15,12 @@ https://www.expedia.com/carsearch?date1=10%2F14%2F2022&date2=10%2F21%2F2022&dlat
 expedia.com/carsearch?aarpcr=off&acop=2&d1=2022-10-05&d2=2022-10-06&dagv=1&date1=10%2F5%2F2022&date2=10%2F6%2F2022&dlat=&dlon=&dpln=8499&drid1=&fdrp=0&loc2=&locn=Lahaina&olat=&olon=&pickupIATACode=OGG&rdct=1&rdus=10&returnIATACode=&rfrr=Homepage&styp=4&subm=1&time1=1030AM&time2=1030AM&ttyp=2&vend=
  */
 
-export const MAUIAIR = "mauiair";
-export const LAHAINA = "lahiana";
-export const KAANAPALI = "kaanapali";
-export const KAPALUA = "kapalua";
-export const KIHEI = "kihei";
-export const WAILEA = "wailea";
+export const MAUIAIR = "Kahului (OGG - Kahului)";
+export const LAHAINA = "Lahaina, HI";
+export const KAANAPALI = "Ka'anapali, HI";
+export const KAPALUA = "Kapalua, HI";
+export const KIHEI = "Kihei, HI";
+export const WAILEA = "Wailea, HI";
 
 function dateFormater(date) {
   function format(da) {

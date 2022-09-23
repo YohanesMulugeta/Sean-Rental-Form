@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./loction.css";
 
-export default function Location({ label, width, handleClick }) {
-  const [value, setValue] = useState("");
+export default function Location({
+  label,
+  width,
+  handleClick,
+  fromValue = "",
+}) {
+  const [value, setValue] = useState(fromValue);
   return (
     <div className="input-container" style={{ width: width }}>
       <input

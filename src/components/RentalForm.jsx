@@ -65,6 +65,7 @@ function RentalForm() {
             <Location
               handleClick={handleClick}
               label="Pick-up location"
+              fromValue={MAUIAIR}
               width={width}
             />
             {isSame === "Same" ? null : (
