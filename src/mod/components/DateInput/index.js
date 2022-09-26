@@ -108,7 +108,7 @@ class DateInput extends PureComponent {
           />
           {invalid && <span className="rdrWarning">&#9888;</span>}
         </span>
-        <TimeDropDown id={"in" + (new Date().getTime() % 1000000)} />
+        <TimeDropDown />
       </div>
     );
   }

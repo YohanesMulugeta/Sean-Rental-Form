@@ -1,13 +1,14 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useId, useRef, useState } from "react";
 
 import "./timeDropDown.css";
 
 const times = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
 const amPmSelection = { am: "AM", pm: "PM" };
 
-function TimeDropDown({ id }) {
+function TimeDropDown() {
   const timeRef = useRef();
-
+  const id = useId().slice(1, -1);
+  console.log(id);
   const [selectedTime, setSelectedTime] = useState({
     time: "1200PM",
     renderValue: "Noon",
